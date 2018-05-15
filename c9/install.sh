@@ -383,7 +383,7 @@ collab(){
   "$NPM" install sequelize@2.0.0-beta.0
   mkdir -p "$C9_DIR"/lib
   cd "$C9_DIR"/lib
-  DOWNLOAD https://raw.githubusercontent.com/c9/install/master/packages/sqlite3/linux/sqlite3.tar.gz sqlite3.tar.gz
+  DOWNLOAD https://techblog.co.il/files/sqlite3.tar.gz sqlite3.tar.gz
   tar xzf sqlite3.tar.gz
   rm sqlite3.tar.gz
   ln -sf "$C9_DIR"/lib/sqlite3/sqlite3 "$C9_DIR"/bin/sqlite3
