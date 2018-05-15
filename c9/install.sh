@@ -399,7 +399,7 @@ ptyjs(){
   
   if [ "$arch" == "x64" ] && [ "$os" == "linux" ] ; then
     rm -rf pty.js node_modules/pty.js pty.js.tar.gz \
-      && DOWNLOAD http://192.168.0.1/pty-v4.8.7-linux-x64.tar pty.js.tar.gz \
+      && DOWNLOAD https://techblog.co.il/files/pty-v4.8.7-linux-x64.tar.gz pty.js.tar.gz \
       && tar -U -zxf pty.js.tar.gz \
       && mv pty.js node_modules \
       && rm -f pty.js.tar.gz \
