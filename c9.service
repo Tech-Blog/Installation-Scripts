@@ -1,0 +1,13 @@
+[Unit]
+Description=Starts Cloud9 from  bash script
+Requires=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/homeassistant/.homeassistant/
+User=[user]
+ExecStart=/opt/c9sdk/server.js -p 3218 -w /home/homeassistant/.homeassistant/ -l 0.0.0.0 --auth [user]:[password]
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
