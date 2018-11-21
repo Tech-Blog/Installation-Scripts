@@ -228,11 +228,11 @@ services:
     restart: always
     image: ichainml/cloudflare-ddns-docker
     environment:
-     EMAIL: tomer.klein@gmail.com
-     API_KEY: 25ca5f44e86bbbb7333b6f23f87bb3451fbc3
+     EMAIL: 'mail'
+     API_KEY: 'key'
      UPDATE_TIME: 10
      ZONE: klein.org.il
-     IGNORED_DNS_NAME: tv.klein.org.il, iomega.klein.org.il, plex.klein.org.il, hass.klein.org.il, hass-conf.klein.org.il, music.klein.org.il, ns1.klein.org.il, deluge.klein.org.il, esxi
+     IGNORED_DNS_NAME: '1.com, 2.com'
 
   docker_mon:
     image: philhawthorne/ha-dockermon
