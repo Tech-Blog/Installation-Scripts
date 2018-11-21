@@ -1,0 +1,27 @@
+#This compose file adds Airsonic https://airsonic.github.io/ to your stack
+version: '3.5'
+services:
+  airsonic:
+    image: airsonic/airsonic
+    container_name: airsonic
+    volumes:
+      - "~/Music:/airsonic/music:z"
+      - "~/Podcasts:/airsonic/podcasts:z"
+      - "~/.Playlists:/airsonic/playlists:z"
+      - "airsonic-data:/airsonic/data"
+    networks:
+      - airsonic
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://airsonic:4040 || exit 1"]
+      interval: 1m30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+networks:
+  airsonic:
+    name: airsonic
+
+volumes:
+  airsonic-data:
